@@ -52,6 +52,15 @@ const ogImage = new URL(image, Astro.site);
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title={siteTitle} href="/rss.xml" />
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1TVBL93BTM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1TVBL93BTM');
+  </script>
 </head>
 <body>
   <!-- WCAG 2.4.1: Skip Link -->
