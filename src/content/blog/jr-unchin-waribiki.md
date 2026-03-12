@@ -8,6 +8,7 @@ author: "障がいHACK編集部"
 supervised: false
 tags: ["精神障害者保健福祉手帳", "JR割引", "鉄道運賃割引", "障害者割引", "ICカード"]
 isPR: false
+image: "/images/thumb-jr-waribiki.webp"
 draft: false
 ---
 

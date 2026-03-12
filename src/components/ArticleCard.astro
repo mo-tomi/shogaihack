@@ -5,8 +5,9 @@ interface Props {
   category: string;
   date: string;
   isPR?: boolean;
+  image?: string;
 }
-const { title, href, category, date, isPR = false } = Astro.props;
+const { title, href, category, date, isPR = false, image } = Astro.props;
 
 const categoryMap: Record<string, { emoji: string; thumbClass: string }> = {
   '制度・手続き': { emoji: '📋', thumbClass: 'thumb-seido' },
@@ -17,7 +18,12 @@ const categoryMap: Record<string, { emoji: string; thumbClass: string }> = {
 const cat = categoryMap[category] || categoryMap['制度・手続き'];
 ---
 <a href={href} class="article-card">
-  <div class={`article-thumb ${cat.thumbClass}`} aria-hidden="true">{cat.emoji}</div>
+  <div class={`article-thumb ${cat.thumbClass}`} aria-hidden="true">
+    {image
+      ? <img src={image} alt="" width="72" height="72" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;border-radius:12px;" />
+      : cat.emoji
+    }
+  </div>
   <div class="article-body">
     <div class="article-tag">
       {category}

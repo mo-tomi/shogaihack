@@ -8,6 +8,7 @@ author: "障がいHACK編集部"
 supervised: false
 tags: ["就労移行支援", "おすすめ", "比較", "転職", "障害者雇用"]
 isPR: true
+image: "/images/thumb-ikou-osusume.webp"
 draft: false
 ---
 

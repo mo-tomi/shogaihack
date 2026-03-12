@@ -8,6 +8,7 @@ author: "障がいHACK編集部"
 supervised: false
 tags: ["就労移行支援", "見学", "事業所選び", "就労支援", "障害福祉サービス"]
 isPR: false
+image: "/images/thumb-ikou-kengaku.webp"
 draft: false
 ---
 

@@ -8,6 +8,7 @@ author: "障がいHACK編集部"
 supervised: false
 tags: ["就労継続支援B型", "工賃", "報酬改定", "工賃向上計画", "B型事業所"]
 isPR: false
+image: "/images/thumb-b-gata-kouchin.webp"
 draft: false
 ---
 

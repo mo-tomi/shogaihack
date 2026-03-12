@@ -30,6 +30,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
           category={post.data.category}
           date={post.data.publishedAt.toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' })}
           isPR={post.data.isPR}
+          image={post.data.image}
         />
       ))}
     </section>

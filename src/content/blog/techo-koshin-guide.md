@@ -8,6 +8,7 @@ author: "障がいHACK編集部"
 supervised: false
 tags: ["障害者手帳", "更新手続き", "必要書類", "精神障害者保健福祉手帳", "療育手帳", "身体障害者手帳"]
 isPR: false
+image: "/images/thumb-techo-koshin.webp"
 draft: false
 ---
 

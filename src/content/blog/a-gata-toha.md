@@ -8,6 +8,7 @@ author: "障がいHACK編集部"
 supervised: false
 tags: ["就労継続支援A型", "就労支援", "障害福祉サービス", "障害者雇用", "給料"]
 isPR: false
+image: "/images/thumb-a-gata-toha.webp"
 draft: false
 ---
 
