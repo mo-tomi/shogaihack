@@ -8,7 +8,6 @@ author: "障がいHACK編集部"
 supervised: false
 tags: ["就労移行支援", "意味ない", "やめとけ", "事業所選び", "就職"]
 isPR: false
-image: "/images/thumb-ikou-iminai.webp"
 draft: false
 ---
 
