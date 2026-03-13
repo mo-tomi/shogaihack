@@ -4,6 +4,7 @@ description: "就労移行支援が「意味ない」「やめとけ」と言わ
 category: "働く"
 publishedAt: 2026-03-13
 updatedAt: 2026-03-13
+image: "/images/thumb-ikou-imi-nai.webp"
 author: "障がいHACK編集部"
 supervised: false
 tags: ["就労移行支援", "意味ない", "やめとけ", "事業所選び", "就職"]
