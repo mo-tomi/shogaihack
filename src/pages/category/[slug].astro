@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import { getCollection } from 'astro:content';
+
+const CATEGORIES: Record<string, string> = {
+  seido:    '制度・手続き',
+  hataraku: '働く',
+  kurasu:   '暮らす',
+  taiken:   '体験談',
+};
+
+export async function getStaticPaths() {
+  const CATEGORIES: Record<string, string> = {
+    seido:    '制度・手続き',
+    hataraku: '働く',
+    kurasu:   '暮らす',
+    taiken:   '体験談',
+  };
+
+  return Object.keys(CATEGORIES).map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+const categoryName = CATEGORIES[slug];
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft && data.category === categoryName))
+  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+---
+<BaseLayout title={`${categoryName} | 障がいHACK`} description={`${categoryName}に関する記事一覧です。`}>
+  <div class="container">
+    <div class="category-header">
+      <div class="cat-pills" style="margin-bottom: 8px;">
+        <a href="/category/seido"    class={`cat-pill${slug === 'seido'    ? ' active' : ''}`}>制度・手続き</a>
+        <a href="/category/hataraku" class={`cat-pill${slug === 'hataraku' ? ' active' : ''}`}>働く</a>
+        <a href="/category/kurasu"   class={`cat-pill${slug === 'kurasu'   ? ' active' : ''}`}>暮らす</a>
+        <a href="/category/taiken"   class={`cat-pill${slug === 'taiken'   ? ' active' : ''}`}>体験談</a>
+      </div>
+      <h1 class="category-title">{categoryName}</h1>
+      <p class="category-count">{posts.length}件の記事</p>
+    </div>
+
+    {posts.length > 0 ? (
+      <section class="article-list" aria-label={`${categoryName}の記事一覧`}>
+        {posts.map((post) => (
+          <ArticleCard
+            title={post.data.title}
+            href={`/blog/${post.id}`}
+            category={post.data.category}
+            date={post.data.publishedAt.toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' })}
+            isPR={post.data.isPR}
+            image={post.data.image}
+          />
+        ))}
+      </section>
+    ) : (
+      <p class="no-posts">まだ記事がありません。</p>
+    )}
+  </div>
+</BaseLayout>
+
+<style>
+.category-header {
+  padding: 40px 0 24px;
+}
+.category-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin: 16px 0 4px;
+}
+.category-count {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  margin: 0 0 24px;
+}
+.cat-pill.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.no-posts {
+  padding: 48px 0;
+  text-align: center;
+  color: var(--text-dim);
+}
+</style>
