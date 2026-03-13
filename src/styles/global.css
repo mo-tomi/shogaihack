@@ -182,6 +182,16 @@ body {
     font-size: 1.3rem;
     line-height: 1.4;
   }
+
+  /* フッターリンクを縦並びに */
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* heroのbrを非表示（改行位置が不自然になるため） */
+  .hero h1 br { display: none; }
 }
 
 /* === Footer */
@@ -360,6 +370,9 @@ body {
   color: var(--blue);
   text-decoration: underline;
   text-underline-offset: 3px;
+  min-height: auto;
+  min-width: auto;
+  display: inline;
 }
 .prose a:hover { color: var(--accent); }
 .prose blockquote {
@@ -369,6 +382,7 @@ body {
   background: var(--accent-light);
   border-radius: 0 8px 8px 0;
   font-size: 0.9rem;
+  overflow-wrap: break-word;
 }
 .prose img {
   max-width: 100%;
@@ -377,7 +391,10 @@ body {
   margin: 16px 0;
 }
 .prose table {
+  display: block;
   width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   border-collapse: collapse;
   margin: 16px 0;
   font-size: 0.88rem;
@@ -390,6 +407,19 @@ body {
 .prose th {
   background: var(--bg);
   font-weight: 700;
+}
+.prose code {
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+.prose pre {
+  overflow-x: auto;
+}
+.article-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
 /* === Article Header */
