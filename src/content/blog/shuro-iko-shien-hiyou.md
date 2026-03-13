@@ -3,7 +3,7 @@ title: "就労移行支援の利用料・費用はいくら？自己負担・交
 description: "就労移行支援の利用料金は9割以上が無料。自己負担の仕組み、世帯収入別の上限額、交通費・昼食費の補助、利用中の生活費の確保方法を福祉現場スタッフが解説します。"
 category: "働く"
 publishedAt: 2026-03-13
-image: "/images/1.webp"
+image: "/images/thumb-shuro-iko-hiyou.webp"
 updatedAt: 2026-03-13
 author: "障がいHACK編集部"
 supervised: false
