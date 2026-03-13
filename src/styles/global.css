@@ -135,6 +135,8 @@ body {
 }
 @media (max-width: 600px) {
   .nav-toggle { display: block; }
+  /* nav自体をflexレイアウトから除外してbuttonを右端に寄せる */
+  .site-header nav { display: contents; }
   .site-nav {
     display: none;
     position: absolute;
