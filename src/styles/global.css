@@ -239,6 +239,8 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 1.6rem;
+  position: relative;
+  overflow: hidden;
 }
 .article-body { flex: 1; min-width: 0; }
 .article-tag {
@@ -360,6 +362,8 @@ body {
   overflow-x: auto;
 }
 .article-thumb img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
