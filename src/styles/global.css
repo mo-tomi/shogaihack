@@ -133,69 +133,6 @@ body {
   cursor: pointer;
   padding: 4px;
 }
-@media (max-width: 600px) {
-  .nav-toggle { display: block; }
-  /* nav自体をflexレイアウトから除外してbuttonを右端に寄せる */
-  .site-header nav { display: contents; }
-  .site-nav {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: var(--bg-card);
-    border-bottom: 1px solid var(--border-light);
-    flex-direction: column;
-    padding: 12px 20px;
-    gap: 8px;
-  }
-  /* JS は nav要素に .open を付与するため nav.open 経由で表示 */
-  nav.open .site-nav { display: flex; }
-
-  /* コンテナ余白 */
-  .container { padding: 0 16px; }
-
-  /* 記事カード：縦並びに変更 */
-  .article-card {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 16px;
-  }
-  .article-thumb {
-    width: 56px;
-    height: 56px;
-    font-size: 1.3rem;
-  }
-  .article-card h2 {
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-
-  /* 記事ページ */
-  .prose {
-    padding: 24px 16px 48px;
-    overflow-x: auto;
-  }
-  .prose h1 { font-size: 1.4rem; }
-  .prose h2 { font-size: 1.15rem; }
-  .article-header { padding: 24px 16px 0; }
-  .article-header h1 {
-    font-size: 1.3rem;
-    line-height: 1.4;
-  }
-
-  /* フッターリンクを縦並びに */
-  .footer-links {
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-  }
-
-  /* heroのbrを非表示（改行位置が不自然になるため） */
-  .hero h1 br { display: none; }
-}
-
 /* === Footer */
 .site-footer {
   border-top: 1px solid var(--border-light);
@@ -547,3 +484,66 @@ body {
 /* === Tap target — WCAG 2.5.8 (44x44 min) */
 a, button { min-height: 44px; min-width: 44px; }
 .site-nav a { min-height: auto; min-width: auto; padding: 10px 0; }
+
+/* === Mobile (max-width: 600px) — 基底スタイルより後に配置して正しく上書き */
+@media (max-width: 600px) {
+  .nav-toggle { display: block; }
+  /* nav自体をflexレイアウトから除外してbuttonを右端に寄せる */
+  .site-header nav { display: contents; }
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border-light);
+    flex-direction: column;
+    padding: 12px 20px;
+    gap: 8px;
+  }
+  nav.open .site-nav { display: flex; }
+
+  .container { padding: 0 16px; }
+
+  /* 記事カード：縦並びに変更 */
+  .article-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+  }
+  .article-thumb {
+    width: 100%;
+    height: 160px;
+    font-size: 2.5rem;
+    border-radius: 10px;
+  }
+  .article-card h2 {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  /* 記事ページ */
+  .prose {
+    padding: 24px 16px 48px;
+    overflow-x: auto;
+  }
+  .prose h1 { font-size: 1.4rem; }
+  .prose h2 { font-size: 1.15rem; }
+  .article-header { padding: 24px 16px 0; }
+  .article-header h1 {
+    font-size: 1.3rem;
+    line-height: 1.4;
+  }
+
+  /* フッターリンクを縦並びに */
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* heroのbrを非表示（改行位置が不自然になるため） */
+  .hero h1 br { display: none; }
+}
