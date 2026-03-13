@@ -6,7 +6,7 @@ publishedAt: 2026-03-12
 updatedAt: 2026-03-12
 author: "障がいHACK編集部"
 supervised: false
-tags: ["グループホーム", "見学", "障害者グループホーム", "住まい", "チェックリスト"]
+tags: ["グループホーム", "見学", "住まい"]
 isPR: false
 image: "/images/thumb-gh-kengaku.webp"
 draft: false

@@ -7,7 +7,7 @@ image: "/images/1.webp"
 updatedAt: 2026-03-13
 author: "障がいHACK編集部"
 supervised: false
-tags: ["就労移行支援", "利用料", "費用", "自己負担", "交通費"]
+tags: ["就労移行支援", "利用料", "費用"]
 isPR: false
 draft: false
 ---

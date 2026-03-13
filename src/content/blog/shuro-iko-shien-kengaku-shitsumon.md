@@ -6,7 +6,7 @@ publishedAt: 2026-03-12
 updatedAt: 2026-03-12
 author: "障がいHACK編集部"
 supervised: false
-tags: ["就労移行支援", "見学", "事業所選び", "就労支援", "障害福祉サービス"]
+tags: ["就労移行支援", "見学", "事業所選び"]
 isPR: false
 image: "/images/thumb-ikou-kengaku.webp"
 draft: false

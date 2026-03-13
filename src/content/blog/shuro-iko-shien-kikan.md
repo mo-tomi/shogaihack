@@ -7,7 +7,7 @@ image: "/images/2.webp"
 updatedAt: 2026-03-13
 author: "障がいHACK編集部"
 supervised: false
-tags: ["就労移行支援", "利用期間", "2年", "延長", "再利用"]
+tags: ["就労移行支援", "利用期間", "延長"]
 isPR: false
 draft: false
 ---

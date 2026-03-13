@@ -1,12 +1,12 @@
 ---
 title: "障害者手帳の更新手続きガイド｜種類別に必要書類・時期・注意点をわかりやすく解説"
 description: "障害者手帳（身体・精神・療育）の更新に必要な書類・申請時期・注意点を種類別にわかりやすく解説。期限切れを防ぐためのポイントもまとめました。"
-category: "制度・手続き"
+category: "制度・お金"
 publishedAt: 2026-03-12
 updatedAt: 2026-03-12
 author: "障がいHACK編集部"
 supervised: false
-tags: ["障害者手帳", "更新手続き", "必要書類", "精神障害者保健福祉手帳", "療育手帳", "身体障害者手帳"]
+tags: ["障害者手帳", "更新手続き", "精神障害者保健福祉手帳", "療育手帳", "身体障害者手帳"]
 isPR: false
 image: "/images/thumb-techo-koshin.webp"
 draft: false

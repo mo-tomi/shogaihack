@@ -1,12 +1,12 @@
 ---
 title: "精神障がい者のJR鉄道運賃割引制度｜対象者・割引内容・手続きをわかりやすく解説"
 description: "2025年4月から始まった精神障がい者向けJR運賃割引制度について、対象者・割引条件・必要な手続き・ICカード対応・私鉄の状況をわかりやすく解説します。"
-category: "制度・手続き"
+category: "制度・お金"
 publishedAt: 2026-03-12
 updatedAt: 2026-03-12
 author: "障がいHACK編集部"
 supervised: false
-tags: ["精神障害者保健福祉手帳", "JR割引", "鉄道運賃割引", "障害者割引", "ICカード"]
+tags: ["障害者手帳", "交通・割引", "JR割引", "精神障害者保健福祉手帳"]
 isPR: false
 image: "/images/thumb-jr-waribiki.webp"
 draft: false

@@ -43,6 +43,13 @@ const updatedDate = post.data.updatedAt?.toLocaleDateString('ja-JP', {
           : <span class="unsupervised-badge">専門家確認前</span>
         }
       </div>
+      {post.data.tags.length > 0 && (
+        <div class="tag-list">
+          {post.data.tags.map((tag) => (
+            <a href={`/tag/${tag}/`} class="tag-pill">{tag}</a>
+          ))}
+        </div>
+      )}
     </div>
 
     <!-- Article Body -->

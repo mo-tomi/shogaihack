@@ -6,7 +6,7 @@ publishedAt: 2026-03-12
 updatedAt: 2026-03-12
 author: "障がいHACK編集部"
 supervised: false
-tags: ["障害者雇用", "面接", "障害開示", "就職活動", "クローズ就労"]
+tags: ["障害者雇用", "面接", "障害開示"]
 isPR: false
 image: "/images/thumb-mensetsu.webp"
 draft: false

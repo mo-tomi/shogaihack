@@ -6,7 +6,7 @@ publishedAt: 2026-03-12
 updatedAt: 2026-03-12
 author: "障がいHACK編集部"
 supervised: false
-tags: ["就労継続支援B型", "工賃", "報酬改定", "工賃向上計画", "B型事業所"]
+tags: ["就労継続支援B型", "工賃", "報酬改定"]
 isPR: false
 image: "/images/thumb-b-gata-kouchin.webp"
 draft: false

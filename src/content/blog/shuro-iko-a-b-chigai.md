@@ -7,7 +7,7 @@ image: "/images/3.webp"
 updatedAt: 2026-03-13
 author: "障がいHACK編集部"
 supervised: false
-tags: ["就労移行支援", "就労継続支援A型", "就労継続支援B型", "違い", "比較"]
+tags: ["就労移行支援", "就労継続支援A型", "就労継続支援B型", "比較"]
 isPR: false
 draft: false
 ---

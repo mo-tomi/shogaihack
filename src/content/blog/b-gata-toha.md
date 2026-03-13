@@ -6,7 +6,7 @@ publishedAt: 2026-03-12
 updatedAt: 2026-03-12
 author: "障がいHACK編集部"
 supervised: false
-tags: ["就労継続支援B型", "就労支援", "障害福祉サービス", "工賃", "A型との違い"]
+tags: ["就労継続支援B型", "就労支援", "工賃"]
 isPR: false
 image: "/images/thumb-b-gata-toha.webp"
 draft: false

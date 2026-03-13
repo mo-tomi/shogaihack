@@ -10,12 +10,11 @@ interface Props {
 const { title, href, category, date, isPR = false, image } = Astro.props;
 
 const categoryMap: Record<string, { emoji: string; thumbClass: string }> = {
-  '制度・手続き': { emoji: '📋', thumbClass: 'thumb-seido' },
-  '働く': { emoji: '💼', thumbClass: 'thumb-hataraku' },
-  '暮らす': { emoji: '🏠', thumbClass: 'thumb-kurasu' },
-  '体験談': { emoji: '🌙', thumbClass: 'thumb-taiken' },
+  '制度・お金': { emoji: '📋', thumbClass: 'thumb-seido' },
+  '働く':      { emoji: '💼', thumbClass: 'thumb-hataraku' },
+  '暮らす':    { emoji: '🏠', thumbClass: 'thumb-kurasu' },
 };
-const cat = categoryMap[category] || categoryMap['制度・手続き'];
+const cat = categoryMap[category] ?? categoryMap['働く'];
 ---
 <a href={href} class="article-card">
   <div class={`article-thumb ${cat.thumbClass}`} aria-hidden="true">

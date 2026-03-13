@@ -6,7 +6,7 @@ const blog = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    category: z.enum(['制度・手続き', '働く', '暮らす', '体験談']),
+    category: z.enum(['働く', '制度・お金', '暮らす']),
     publishedAt: z.coerce.date(),
     updatedAt: z.coerce.date().optional(),
     author: z.string().default('障がいHACK編集部'),

@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog', ({ data }) => !data.draft);
+
+const tagCount: Record<string, number> = {};
+for (const post of posts) {
+  for (const tag of post.data.tags) {
+    tagCount[tag] = (tagCount[tag] ?? 0) + 1;
+  }
+}
+
+const tags = Object.entries(tagCount).sort((a, b) => b[1] - a[1]);
+---
+<BaseLayout title="タグ一覧 | 障がいHACK" description="障がいHACKのタグ一覧です。気になるテーマから記事を探せます。">
+  <div class="container">
+    <div class="tags-header">
+      <h1>タグ一覧</h1>
+      <p class="tags-desc">気になるテーマから記事を探せます</p>
+    </div>
+    <div class="tag-index">
+      {tags.map(([tag, count]) => (
+        <a href={`/tag/${tag}/`} class="tag-pill tag-pill--lg">
+          {tag}<span class="tag-count">{count}</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+.tags-header { padding: 40px 0 24px; }
+.tags-header h1 { font-size: 1.6rem; font-weight: 800; margin: 0 0 8px; }
+.tags-desc { color: var(--text-dim); font-size: 0.9rem; margin: 0 0 32px; }
+.tag-index { display: flex; flex-wrap: wrap; gap: 10px; }
+.tag-pill--lg { padding: 6px 14px; font-size: 0.82rem; }
+.tag-count {
+  display: inline-block;
+  margin-left: 6px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 99px;
+  font-size: 0.68rem;
+  padding: 1px 6px;
+  font-weight: 700;
+}
+</style>

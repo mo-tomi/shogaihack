@@ -4,21 +4,13 @@ import ArticleCard from '../../components/ArticleCard.astro';
 import { getCollection } from 'astro:content';
 
 const CATEGORIES: Record<string, string> = {
-  seido:    '制度・手続き',
   hataraku: '働く',
+  seido:    '制度・お金',
   kurasu:   '暮らす',
-  taiken:   '体験談',
 };
 
 export async function getStaticPaths() {
-  const CATEGORIES: Record<string, string> = {
-    seido:    '制度・手続き',
-    hataraku: '働く',
-    kurasu:   '暮らす',
-    taiken:   '体験談',
-  };
-
-  return Object.keys(CATEGORIES).map((slug) => ({ params: { slug } }));
+  return ['hataraku', 'seido', 'kurasu'].map((slug) => ({ params: { slug } }));
 }
 
 const { slug } = Astro.params;
@@ -31,10 +23,10 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft && data.cat
   <div class="container">
     <div class="category-header">
       <div class="cat-pills" style="margin-bottom: 8px;">
-        <a href="/category/seido"    class={`cat-pill${slug === 'seido'    ? ' active' : ''}`}>制度・手続き</a>
         <a href="/category/hataraku" class={`cat-pill${slug === 'hataraku' ? ' active' : ''}`}>働く</a>
+        <a href="/category/seido"    class={`cat-pill${slug === 'seido'    ? ' active' : ''}`}>制度・お金</a>
         <a href="/category/kurasu"   class={`cat-pill${slug === 'kurasu'   ? ' active' : ''}`}>暮らす</a>
-        <a href="/category/taiken"   class={`cat-pill${slug === 'taiken'   ? ' active' : ''}`}>体験談</a>
+        <a href="/tags"              class="cat-pill">タグから探す</a>
       </div>
       <h1 class="category-title">{categoryName}</h1>
       <p class="category-count">{posts.length}件の記事</p>
@@ -60,27 +52,9 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft && data.cat
 </BaseLayout>
 
 <style>
-.category-header {
-  padding: 40px 0 24px;
-}
-.category-title {
-  font-size: 1.6rem;
-  font-weight: 800;
-  margin: 16px 0 4px;
-}
-.category-count {
-  color: var(--text-dim);
-  font-size: 0.9rem;
-  margin: 0 0 24px;
-}
-.cat-pill.active {
-  background: var(--accent);
-  color: #fff;
-  border-color: var(--accent);
-}
-.no-posts {
-  padding: 48px 0;
-  text-align: center;
-  color: var(--text-dim);
-}
+.category-header { padding: 40px 0 24px; }
+.category-title { font-size: 1.6rem; font-weight: 800; margin: 16px 0 4px; }
+.category-count { color: var(--text-dim); font-size: 0.9rem; margin: 0 0 24px; }
+.cat-pill.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.no-posts { padding: 48px 0; text-align: center; color: var(--text-dim); }
 </style>

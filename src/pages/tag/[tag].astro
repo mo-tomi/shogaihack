@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  const tags = [...new Set(posts.flatMap((p) => p.data.tags))];
+  return tags.map((tag) => ({ params: { tag } }));
+}
+
+const { tag } = Astro.params;
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft && data.tags.includes(tag)))
+  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+---
+<BaseLayout title={`#${tag} の記事一覧 | 障がいHACK`} description={`${tag}に関する記事一覧です。`}>
+  <div class="container">
+    <div class="tag-header">
+      <a href="/tags" class="tag-back">← タグ一覧に戻る</a>
+      <h1><span class="tag-hash">#</span>{tag}</h1>
+      <p class="tag-count-label">{posts.length}件の記事</p>
+    </div>
+
+    {posts.length > 0 ? (
+      <section class="article-list" aria-label={`${tag}の記事一覧`}>
+        {posts.map((post) => (
+          <ArticleCard
+            title={post.data.title}
+            href={`/blog/${post.id}`}
+            category={post.data.category}
+            date={post.data.publishedAt.toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' })}
+            isPR={post.data.isPR}
+            image={post.data.image}
+          />
+        ))}
+      </section>
+    ) : (
+      <p class="no-posts">まだ記事がありません。</p>
+    )}
+  </div>
+</BaseLayout>
+
+<style>
+.tag-header { padding: 32px 0 24px; }
+.tag-back { font-size: 0.85rem; color: var(--text-dim); text-decoration: none; }
+.tag-back:hover { color: var(--accent); }
+.tag-header h1 { font-size: 1.6rem; font-weight: 800; margin: 12px 0 4px; }
+.tag-hash { color: var(--accent); margin-right: 2px; }
+.tag-count-label { color: var(--text-dim); font-size: 0.9rem; margin: 0 0 24px; }
+.no-posts { padding: 48px 0; text-align: center; color: var(--text-dim); }
+</style>

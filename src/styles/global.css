@@ -556,3 +556,30 @@ a, button { min-height: 44px; min-width: 44px; }
   /* heroのbrを非表示（改行位置が不自然になるため） */
   .hero h1 br { display: none; }
 }
+
+/* === Tag styles */
+.tag-list {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+.tag-pill {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 99px;
+  font-size: 0.68rem;
+  font-weight: 500;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: all 0.2s;
+  min-height: auto;
+  min-width: auto;
+}
+.tag-pill:hover {
+  background: var(--accent-light);
+  color: var(--accent);
+  border-color: var(--accent);
+}

@@ -7,7 +7,7 @@ updatedAt: 2026-03-13
 image: "/images/thumb-ikou-imi-nai.webp"
 author: "障がいHACK編集部"
 supervised: false
-tags: ["就労移行支援", "意味ない", "やめとけ", "事業所選び", "就職"]
+tags: ["就労移行支援", "事業所選び"]
 isPR: false
 draft: false
 ---

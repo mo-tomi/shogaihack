@@ -7,7 +7,7 @@ image: "/images/4.webp"
 updatedAt: 2026-03-13
 author: "障がいHACK編集部"
 supervised: false
-tags: ["就労継続支援B型", "工賃", "生活費", "障害年金", "生活保護"]
+tags: ["就労継続支援B型", "工賃", "障害年金", "生活保護"]
 isPR: false
 draft: false
 ---
