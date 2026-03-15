@@ -1,0 +1,113 @@
+---
+/**
+ * 記事末尾に表示するDiscordコミュニティ誘導CTA
+ * 使い方: 記事レイアウトの本文直後に <DiscordCTA /> を配置
+ */
+const DISCORD_INVITE_URL = "https://discord.gg/WM2zzSAAp5";
+---
+
+<aside class="discord-cta" aria-label="コミュニティ案内">
+  <div class="discord-cta__inner">
+    <div class="discord-cta__icon" aria-hidden="true">
+      <svg width="40" height="40" viewBox="0 0 71 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M60.1 4.9A58.5 58.5 0 0045.4.2a.2.2 0 00-.2.1 40.8 40.8 0 00-1.8 3.7 54 54 0 00-16.2 0A37.4 37.4 0 0025.4.3a.2.2 0 00-.2-.1A58.4 58.4 0 0010.5 4.9a.2.2 0 00-.1.1C1.5 18.7-.9 32.2.3 45.5v.1a58.8 58.8 0 0017.7 9a.2.2 0 00.3-.1 42 42 0 003.6-5.9.2.2 0 00-.1-.3 38.8 38.8 0 01-5.5-2.6.2.2 0 01 0-.4l1.1-.9a.2.2 0 01.2 0 42 42 0 0035.4 0 .2.2 0 01.2 0l1.1.9a.2.2 0 010 .4 36.4 36.4 0 01-5.5 2.6.2.2 0 00-.1.3 47.2 47.2 0 003.6 5.9.2.2 0 00.3.1 58.6 58.6 0 0017.7-9v-.1c1.4-15-2.3-28.4-9.8-40.5a.2.2 0 00-.1-.1zM23.7 37.3c-3.5 0-6.4-3.2-6.4-7.1s2.8-7.1 6.4-7.1 6.5 3.2 6.4 7.1c0 3.9-2.8 7.1-6.4 7.1zm23.6 0c-3.5 0-6.4-3.2-6.4-7.1s2.8-7.1 6.4-7.1 6.5 3.2 6.4 7.1c0 3.9-2.8 7.1-6.4 7.1z" fill="currentColor"/>
+      </svg>
+    </div>
+    <div class="discord-cta__content">
+      <p class="discord-cta__heading">この記事について当事者同士で話せるコミュニティ</p>
+      <p class="discord-cta__description">
+        障害者手帳を持つ仲間が集まるDiscordサーバー「手帳持ちの集い」で、
+        制度の情報交換や気軽な雑談ができます。聞き専OK・入退室自由。
+      </p>
+      <a href={DISCORD_INVITE_URL} target="_blank" rel="noopener noreferrer" class="discord-cta__button">
+        Discordに参加する（無料）
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M7 17l9.2-9.2M7 7h10v10"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</aside>
+
+<style>
+  .discord-cta {
+    margin: 3rem 0 1.5rem;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #5865f2 0%, #4752c4 100%);
+    color: #fff;
+    overflow: hidden;
+  }
+
+  .discord-cta__inner {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    padding: 1.5rem;
+  }
+
+  .discord-cta__icon {
+    flex-shrink: 0;
+    opacity: 0.9;
+    padding-top: 0.15rem;
+  }
+
+  .discord-cta__content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .discord-cta__heading {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .discord-cta__description {
+    margin: 0 0 1rem;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    opacity: 0.92;
+  }
+
+  .discord-cta__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.65rem 1.25rem;
+    background: #fff;
+    color: #5865f2;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .discord-cta__button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .discord-cta__button:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 480px) {
+    .discord-cta__inner {
+      flex-direction: column;
+      gap: 0.75rem;
+      padding: 1.25rem;
+    }
+
+    .discord-cta__icon {
+      display: none;
+    }
+
+    .discord-cta__button {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>
