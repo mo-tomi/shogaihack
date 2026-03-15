@@ -1,6 +1,7 @@
 name: Discord記事通知
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
     paths:
