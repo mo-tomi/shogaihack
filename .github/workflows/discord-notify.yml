@@ -1,0 +1,77 @@
+name: Discord記事通知
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/content/blog/**'
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: 新規・更新記事を検出
+        id: detect
+        run: |
+          # 直前コミットとの差分からblog配下の.md/.mdxファイルを取得
+          CHANGED=$(git diff --name-only HEAD~1 HEAD -- 'src/content/blog/' | grep -E '\.(md|mdx)$' || true)
+          echo "changed_files<<EOF" >> $GITHUB_OUTPUT
+          echo "$CHANGED" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Discordに通知
+        if: steps.detect.outputs.changed_files != ''
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          while IFS= read -r file; do
+            [ -z "$file" ] && continue
+
+            # frontmatterからtitle, description, categoryを抽出
+            TITLE=$(sed -n '/^---$/,/^---$/p' "$file" | grep '^title:' | sed 's/^title: *//;s/^"//;s/"$//')
+            DESC=$(sed -n '/^---$/,/^---$/p' "$file" | grep '^description:' | sed 's/^description: *//;s/^"//;s/"$//')
+            CATEGORY=$(sed -n '/^---$/,/^---$/p' "$file" | grep '^category:' | sed 's/^category: *//;s/^"//;s/"$//')
+
+            # ファイル名からスラッグを生成（拡張子除去）
+            SLUG=$(basename "$file" | sed 's/\.\(md\|mdx\)$//')
+            URL="https://shogaihack.com/blog/${SLUG}/"
+
+            # カテゴリに応じた色を設定
+            case "$CATEGORY" in
+              "働く")      COLOR=3447003 ;;   # 青
+              "制度・お金") COLOR=15844367 ;;  # 黄
+              "暮らす")    COLOR=3066993 ;;   # 緑
+              *)           COLOR=10181046 ;;  # グレー
+            esac
+
+            # Discord Embed形式で送信
+            PAYLOAD=$(cat <<ENDJSON
+          {
+            "username": "障がいHACK",
+            "avatar_url": "https://shogaihack.com/favicon.svg",
+            "embeds": [{
+              "title": "📝 ${TITLE}",
+              "description": "${DESC}",
+              "url": "${URL}",
+              "color": ${COLOR},
+              "footer": {
+                "text": "カテゴリ：${CATEGORY} ｜ shogaihack.com"
+              },
+              "timestamp": "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            }]
+          }
+          ENDJSON
+          )
+
+            curl -s -H "Content-Type: application/json" \
+              -d "$PAYLOAD" \
+              "$DISCORD_WEBHOOK_URL"
+
+            echo "✅ 通知送信: $TITLE"
+            sleep 1  # レートリミット回避
+
+          done <<< "${{ steps.detect.outputs.changed_files }}"
