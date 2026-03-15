@@ -9,6 +9,7 @@ supervised: false
 tags: ["障害者雇用", "オープン就労", "クローズ就労", "就職", "転職"]
 isPR: false
 draft: false
+image: "/images/thumb-open-close-shuro.webp"
 ---
 
 「障害をオープンにして働くべき？クローズで働くべき？」

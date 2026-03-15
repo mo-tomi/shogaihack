@@ -9,6 +9,7 @@ supervised: false
 tags: ["精神科", "主治医", "転院", "セカンドオピニオン", "通院"]
 isPR: false
 draft: false
+image: "/images/thumb-shujii-awanai.webp"
 ---
 
 「先生が合わなさすぎて…」「話を聞いてくれない」「薬を出すだけ」

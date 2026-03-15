@@ -9,6 +9,7 @@ supervised: false
 tags: ["障害年金", "申請", "受給条件", "精神障害"]
 isPR: false
 draft: false
+image: "/images/thumb-shogai-nenkin.webp"
 ---
 
 「障害年金って自分ももらえるの？」「申請が難しそうで踏み出せない…」

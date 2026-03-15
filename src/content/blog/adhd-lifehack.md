@@ -9,6 +9,7 @@ supervised: false
 tags: ["ADHD", "発達障害", "ライフハック", "忘れ物対策", "先延ばし"]
 isPR: false
 draft: false
+image: "/images/thumb-adhd-lifehack.webp"
 ---
 
 「また忘れ物した…」「やらなきゃいけないのに動けない…」

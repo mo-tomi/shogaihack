@@ -9,6 +9,7 @@ supervised: false
 tags: ["障害者手帳", "メリット", "デメリット", "精神障害者保健福祉手帳"]
 isPR: false
 draft: false
+image: "/images/thumb-techo-merit.webp"
 ---
 
 「障害者手帳って取った方がいいの？デメリットはないの？」
