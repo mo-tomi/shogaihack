@@ -583,3 +583,10 @@ a, button { min-height: 44px; min-width: 44px; }
   color: var(--accent);
   border-color: var(--accent);
 }
+
+/* === Related Articles */
+.related-articles {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 20px 64px;
+}

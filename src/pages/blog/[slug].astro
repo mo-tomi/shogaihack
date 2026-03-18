@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
 import { getCollection, render } from 'astro:content';
 import DiscordCTA from '../../components/DiscordCTA.astro';
 
@@ -13,6 +14,24 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
+
+// Related articles
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const currentTags = new Set(post.data.tags);
+const relatedPosts = allPosts
+  .filter(p => p.id !== post.id)
+  .map(p => ({
+    post: p,
+    sharedTags: p.data.tags.filter(t => currentTags.has(t)).length,
+    sameCategory: p.data.category === post.data.category ? 1 : 0,
+  }))
+  .sort((a, b) => {
+    if (b.sharedTags !== a.sharedTags) return b.sharedTags - a.sharedTags;
+    if (b.sameCategory !== a.sameCategory) return b.sameCategory - a.sameCategory;
+    return b.post.data.publishedAt.valueOf() - a.post.data.publishedAt.valueOf();
+  })
+  .slice(0, 4)
+  .map(c => c.post);
 
 const publishedDate = post.data.publishedAt.toLocaleDateString('ja-JP', {
   year: 'numeric', month: 'long', day: 'numeric'
@@ -78,5 +97,23 @@ const updatedDate = post.data.updatedAt?.toLocaleDateString('ja-JP', {
       </div>
     </div>
     <DiscordCTA />
+
+    {relatedPosts.length > 0 && (
+      <aside class="related-articles" aria-labelledby="related-heading">
+        <div class="section-label" id="related-heading">関連する記事</div>
+        <section class="article-list" aria-label="関連記事一覧">
+          {relatedPosts.map((rp) => (
+            <ArticleCard
+              title={rp.data.title}
+              href={`/blog/${rp.id}`}
+              category={rp.data.category}
+              date={rp.data.publishedAt.toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' })}
+              isPR={rp.data.isPR}
+              image={rp.data.image}
+            />
+          ))}
+        </section>
+      </aside>
+    )}
   </article>
 </BaseLayout>

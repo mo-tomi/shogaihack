@@ -2,9 +2,19 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import { getCollection } from 'astro:content';
+import { fetchPageViews } from '../lib/ga4';
 
-const posts = (await getCollection('blog', ({ data }) => !data.draft))
-  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const pageViews = await fetchPageViews();
+const hasPV = pageViews.size > 0;
+
+const posts = allPosts.sort((a, b) => {
+  if (hasPV) {
+    const diff = (pageViews.get(a.id) ?? 0) - (pageViews.get(b.id) ?? 0);
+    if (diff !== 0) return -diff;
+  }
+  return b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf();
+});
 ---
 <BaseLayout title="障がいHACK">
   <div class="container">
@@ -21,7 +31,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
     </section>
 
     <!-- Article List -->
-    <div class="section-label">あたらしい記事</div>
+    <div class="section-label">{hasPV ? 'よく読まれている記事' : 'あたらしい記事'}</div>
     <section class="article-list" aria-label="記事一覧">
       {posts.map((post) => (
         <ArticleCard
