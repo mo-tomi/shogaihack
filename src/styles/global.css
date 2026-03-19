@@ -442,15 +442,22 @@ body {
   flex-shrink: 0;
   object-fit: cover;
 }
+.author-name-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
 .author-info .name {
   font-size: 0.85rem;
   font-weight: 700;
 }
+.author-info .author-sep {
+  color: var(--border-light);
+  font-size: 0.85rem;
+}
 .author-info .author-sub {
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--text-body);
-  margin-top: 2px;
+  font-size: 0.75rem;
+  color: var(--text-dim);
 }
 .author-info .bio {
   font-size: 0.72rem;
