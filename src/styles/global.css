@@ -447,13 +447,16 @@ body {
   font-weight: 700;
 }
 .author-info .author-sub {
-  font-size: 0.75rem;
-  color: var(--text-dim);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-body);
+  margin-top: 2px;
 }
 .author-info .bio {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   color: var(--text-dim);
   line-height: 1.6;
+  margin-top: 4px;
 }
 
 /* === Disclaimer */
