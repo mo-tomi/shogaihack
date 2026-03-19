@@ -466,6 +466,35 @@ body {
   margin-top: 4px;
 }
 
+/* === Social Links */
+.social-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: var(--text-body);
+  text-decoration: none;
+  padding: 6px 14px;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+a.social-link:hover {
+  background: var(--accent-light);
+}
+.social-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
 /* === Disclaimer */
 .disclaimer {
   background: #faf7f2;
