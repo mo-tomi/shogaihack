@@ -475,12 +475,12 @@ body {
   gap: 12px;
 }
 .social-link {
-  display: inline-flex;
+  display: inline-flex !important;
   align-items: center;
   gap: 6px;
   font-size: 0.82rem;
   color: var(--text-body);
-  text-decoration: none;
+  text-decoration: none !important;
   padding: 6px 14px;
   border: 1px solid var(--border-light);
   border-radius: 8px;
