@@ -1,3 +1,7 @@
 # .md付きURLを直接正規URL（末尾スラッシュ付き）にリダイレクト
 /blog/*.md/   /blog/:splat/   301
 /blog/*.md    /blog/:splat/   301
+
+# 削除済みカテゴリのリダイレクト
+/category/taiken/  /category/hataraku/  301
+/category/taiken   /category/hataraku/  301
