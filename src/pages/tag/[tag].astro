@@ -14,7 +14,7 @@ const { tag } = Astro.params;
 const posts = (await getCollection('blog', ({ data }) => !data.draft && data.tags.includes(tag)))
   .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
 ---
-<BaseLayout title={`#${tag} の記事一覧 | 障がいHACK`} description={`${tag}に関する記事一覧です。`}>
+<BaseLayout title={`${tag}の記事一覧【障がいHACK】`} description={`「${tag}」に関する記事をまとめました。福祉現場スタッフが、制度の使い方や手続きの流れをわかりやすく解説しています。`}>
   <div class="container">
     <div class="tag-header">
       <a href="/tags" class="tag-back">← タグ一覧に戻る</a>

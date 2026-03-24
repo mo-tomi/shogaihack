@@ -9,6 +9,18 @@ const CATEGORIES: Record<string, string> = {
   kurasu:   '暮らす',
 };
 
+const CATEGORY_TITLES: Record<string, string> = {
+  hataraku: '障害者の就職・転職・就労支援の記事一覧',
+  seido:    '障害者手帳・障害年金・福祉制度の記事一覧',
+  kurasu:   '障がいのある方の暮らし・生活の知恵の記事一覧',
+};
+
+const CATEGORY_DESCRIPTIONS: Record<string, string> = {
+  hataraku: '就労移行支援・就労継続支援A型/B型・障害者雇用など、障がいのある方の「働く」を支える情報を福祉現場スタッフがわかりやすく解説します。',
+  seido:    '障害者手帳の申請・更新、障害年金の受給条件、医療費助成、交通費割引など、知らないと損する制度・お金の情報をまとめています。',
+  kurasu:   'グループホーム選び、ライフハック、通院の悩みなど、障がいのある方の毎日がちょっとラクになる暮らしの情報をお届けします。',
+};
+
 export async function getStaticPaths() {
   return ['hataraku', 'seido', 'kurasu'].map((slug) => ({ params: { slug } }));
 }
@@ -19,7 +31,7 @@ const categoryName = CATEGORIES[slug];
 const posts = (await getCollection('blog', ({ data }) => !data.draft && data.category === categoryName))
   .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
 ---
-<BaseLayout title={`${categoryName} | 障がいHACK`} description={`${categoryName}に関する記事一覧です。`}>
+<BaseLayout title={CATEGORY_TITLES[slug]} description={CATEGORY_DESCRIPTIONS[slug]}>
   <div class="container">
     <div class="category-header">
       <div class="cat-pills" style="margin-bottom: 8px;">
