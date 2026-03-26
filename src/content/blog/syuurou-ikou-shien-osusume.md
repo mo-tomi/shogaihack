@@ -102,7 +102,11 @@ draft: false
 
 たとえば「発達障害コース」では、発達障害の特性に合わせたコミュニケーション訓練やストレスマネジメントが受けられる。「うつ症状コース」は、認知行動療法をベースにした再発予防プログラムが特徴。
 
-**[atGPジョブトレの無料見学に申し込む（PR）](#)** <!-- ASP審査中：承認後にリンク差し替え -->
+**<a href="https://px.a8.net/svt/ejp?a8mat=4AZES6+AO0LYQ+3UNE+15ORS2" rel="nofollow sponsored" target="_blank">atGPジョブトレの無料見学に申し込む（PR）</a>**<img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=4AZES6+AO0LYQ+3UNE+15ORS2" alt="" />
+
+↓ 発達障害コースの詳細はこちら
+
+**<a href="https://px.a8.net/svt/ejp?a8mat=4AZES6+BRWNHU+3UNE+NUES2" rel="nofollow sponsored" target="_blank">発達障害専門のトレーニングだから働き続ける力が身につく【atGPジョブトレ 発達障害コース】（PR）</a>**<img border="0" width="1" height="1" src="https://www18.a8.net/0.gif?a8mat=4AZES6+BRWNHU+3UNE+NUES2" alt="" />
 
 ---
 
