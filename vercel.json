@@ -1,0 +1,15 @@
+{
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/blog/:slug.md",
+      "destination": "/blog/:slug/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:slug.md/",
+      "destination": "/blog/:slug/",
+      "permanent": true
+    }
+  ]
+}

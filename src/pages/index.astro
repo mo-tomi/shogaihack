@@ -23,10 +23,10 @@ const posts = allPosts.sort((a, b) => {
       <h1>障がいを持つあなたの毎日に、<br />ちょっとした工夫を。</h1>
       <p>制度のこと、働き方のこと、暮らしのこと。<br />福祉の現場から、あなたに役立つ情報をお届けします。</p>
       <div class="cat-pills">
-        <a href="/category/hataraku" class="cat-pill">働く</a>
-        <a href="/category/seido" class="cat-pill">制度・お金</a>
-        <a href="/category/kurasu" class="cat-pill">暮らす</a>
-        <a href="/tags" class="cat-pill">タグから探す</a>
+        <a href="/category/hataraku/" class="cat-pill">働く</a>
+        <a href="/category/seido/" class="cat-pill">制度・お金</a>
+        <a href="/category/kurasu/" class="cat-pill">暮らす</a>
+        <a href="/tags/" class="cat-pill">タグから探す</a>
       </div>
     </section>
 
@@ -36,7 +36,7 @@ const posts = allPosts.sort((a, b) => {
       {posts.map((post) => (
         <ArticleCard
           title={post.data.title}
-          href={`/blog/${post.id}`}
+          href={`/blog/${post.id}/`}
           category={post.data.category}
           date={post.data.publishedAt.toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' })}
           isPR={post.data.isPR}

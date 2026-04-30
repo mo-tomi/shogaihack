@@ -97,7 +97,7 @@ image: "/images/thumb-open-close-shuro.webp"
 **パターン3：そもそも就労が時期尚早**
 → B型やA型で段階的に慣らしていく選択も
 
-→ [就労移行支援・A型・B型の違い](/blog/shuro-iko-a-b-chigai)
+→ [就労移行支援・A型・B型の違い](/blog/shuro-iko-a-b-chigai/)
 
 ---
 
@@ -105,7 +105,7 @@ image: "/images/thumb-open-close-shuro.webp"
 
 オープン就労を選んだ場合、**「できないこと」より「配慮があればできること」**を中心に話すことがポイント。
 
-→ 伝え方の詳細は [障害者雇用の面接で障害をどこまで伝える？](/blog/shougaisha-koyo-mensetsu-doko-made-tsutaeru)
+→ 伝え方の詳細は [障害者雇用の面接で障害をどこまで伝える？](/blog/shougaisha-koyo-mensetsu-doko-made-tsutaeru/)
 
 ---
 
@@ -140,7 +140,7 @@ image: "/images/thumb-open-close-shuro.webp"
 
 **迷ったら就労移行支援のスタッフや障害者就業・生活支援センターに相談してください。** 自分の状況を客観的に見てもらった上で、一緒に考えてもらえます。
 
-→ [就労移行支援おすすめ6選](/blog/syuurou-ikou-shien-osusume)
+→ [就労移行支援おすすめ6選](/blog/syuurou-ikou-shien-osusume/)
 
 ---
 

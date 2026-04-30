@@ -109,7 +109,7 @@ const updatedDate = post.data.updatedAt?.toLocaleDateString('ja-JP', {
           {relatedPosts.map((rp) => (
             <ArticleCard
               title={rp.data.title}
-              href={`/blog/${rp.id}`}
+              href={`/blog/${rp.id}/`}
               category={rp.data.category}
               date={rp.data.publishedAt.toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' })}
               isPR={rp.data.isPR}

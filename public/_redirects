@@ -1,4 +1,4 @@
-# .md付きURLを直接正規URL（末尾スラッシュ付き）にリダイレクト
+# .md付きURLを正規URL（末尾スラッシュ付き）にリダイレクト
 /blog/*.md/   /blog/:splat/   301
 /blog/*.md    /blog/:splat/   301
 

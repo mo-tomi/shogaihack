@@ -17,9 +17,15 @@ const {
   noindex = false,
 } = Astro.props;
 
+const normalizeCanonicalPath = (pathname: string) => {
+  let path = pathname.replace(/\/index\.html$/, '/').replace(/\.md\/?$/, '/');
+  if (path !== '/' && !path.endsWith('/')) path += '/';
+  return path;
+};
+
 const siteTitle = '障がいHACK';
 const fullTitle = title === siteTitle ? title : `${title} | ${siteTitle}`;
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const canonicalURL = new URL(normalizeCanonicalPath(Astro.url.pathname), Astro.site);
 const ogImage = new URL(image, Astro.site);
 ---
 <!DOCTYPE html>
@@ -86,11 +92,11 @@ const ogImage = new URL(image, Astro.site);
       >☰</button>
       <nav aria-label="メインナビゲーション">
         <ul class="site-nav">
-          <li><a href="/category/hataraku">働く</a></li>
-          <li><a href="/category/seido">制度・お金</a></li>
-          <li><a href="/category/kurasu">暮らす</a></li>
-          <li><a href="/tags">タグ一覧</a></li>
-          <li><a href="/about">運営者情報</a></li>
+          <li><a href="/category/hataraku/">働く</a></li>
+          <li><a href="/category/seido/">制度・お金</a></li>
+          <li><a href="/category/kurasu/">暮らす</a></li>
+          <li><a href="/tags/">タグ一覧</a></li>
+          <li><a href="/about/">運営者情報</a></li>
         </ul>
       </nav>
     </div>
@@ -105,10 +111,10 @@ const ogImage = new URL(image, Astro.site);
   <footer class="site-footer" role="contentinfo">
     <div class="container">
       <nav class="footer-links" aria-label="フッターナビゲーション">
-        <a href="/about">運営者情報</a>
-        <a href="/editorial-policy">編集ポリシー</a>
-        <a href="/privacy-policy">プライバシーポリシー</a>
-        <a href="/accessibility">アクセシビリティ</a>
+        <a href="/about/">運営者情報</a>
+        <a href="/editorial-policy/">編集ポリシー</a>
+        <a href="/privacy-policy/">プライバシーポリシー</a>
+        <a href="/accessibility/">アクセシビリティ</a>
       </nav>
       <p>&copy; 2026 障がいHACK編集部. All rights reserved.</p>
     </div>

@@ -17,7 +17,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft && data.tag
 <BaseLayout title={`#${tag} の記事一覧 | 障がいHACK`} description={`${tag}に関する記事一覧です。`}>
   <div class="container">
     <div class="tag-header">
-      <a href="/tags" class="tag-back">← タグ一覧に戻る</a>
+      <a href="/tags/" class="tag-back">← タグ一覧に戻る</a>
       <h1><span class="tag-hash">#</span>{tag}</h1>
       <p class="tag-count-label">{posts.length}件の記事</p>
     </div>
@@ -27,7 +27,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft && data.tag
         {posts.map((post) => (
           <ArticleCard
             title={post.data.title}
-            href={`/blog/${post.id}`}
+            href={`/blog/${post.id}/`}
             category={post.data.category}
             date={post.data.publishedAt.toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' })}
             isPR={post.data.isPR}

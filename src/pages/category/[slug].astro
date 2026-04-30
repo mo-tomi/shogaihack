@@ -23,10 +23,10 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft && data.cat
   <div class="container">
     <div class="category-header">
       <div class="cat-pills" style="margin-bottom: 8px;">
-        <a href="/category/hataraku" class={`cat-pill${slug === 'hataraku' ? ' active' : ''}`}>働く</a>
-        <a href="/category/seido"    class={`cat-pill${slug === 'seido'    ? ' active' : ''}`}>制度・お金</a>
-        <a href="/category/kurasu"   class={`cat-pill${slug === 'kurasu'   ? ' active' : ''}`}>暮らす</a>
-        <a href="/tags"              class="cat-pill">タグから探す</a>
+        <a href="/category/hataraku/" class={`cat-pill${slug === 'hataraku' ? ' active' : ''}`}>働く</a>
+        <a href="/category/seido/"    class={`cat-pill${slug === 'seido'    ? ' active' : ''}`}>制度・お金</a>
+        <a href="/category/kurasu/"   class={`cat-pill${slug === 'kurasu'   ? ' active' : ''}`}>暮らす</a>
+        <a href="/tags/"              class="cat-pill">タグから探す</a>
       </div>
       <h1 class="category-title">{categoryName}</h1>
       <p class="category-count">{posts.length}件の記事</p>
@@ -37,7 +37,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft && data.cat
         {posts.map((post) => (
           <ArticleCard
             title={post.data.title}
-            href={`/blog/${post.id}`}
+            href={`/blog/${post.id}/`}
             category={post.data.category}
             date={post.data.publishedAt.toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' })}
             isPR={post.data.isPR}

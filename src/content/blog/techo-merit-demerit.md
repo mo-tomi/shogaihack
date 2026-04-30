@@ -52,7 +52,7 @@ image: "/images/thumb-techo-merit.webp"
 | タクシー | 10%割引（多くの地域） |
 | 航空券 | 各社の障害者割引あり |
 
-→ JR割引の詳細は [精神障がい者のJR鉄道運賃割引制度](/blog/jr-unchin-waribiki)
+→ JR割引の詳細は [精神障がい者のJR鉄道運賃割引制度](/blog/jr-unchin-waribiki/)
 
 ### 3. 公共料金・サービスの割引
 
@@ -73,7 +73,7 @@ image: "/images/thumb-techo-merit.webp"
 - **就労継続支援B型**（自分のペースで福祉的就労）
 - **障害者雇用枠での就職**（手帳が応募条件の場合が多い）
 
-→ [就労移行支援・A型・B型の違いを比較](/blog/shuro-iko-a-b-chigai)
+→ [就労移行支援・A型・B型の違いを比較](/blog/shuro-iko-a-b-chigai/)
 
 ### 5. 障害者雇用枠で就職できる
 
@@ -101,13 +101,13 @@ image: "/images/thumb-techo-merit.webp"
 
 **現実：一般枠での就職には影響しません。** 手帳を持っていることを一般枠の採用選考で申告する義務はありません。逆に障害者雇用枠という選択肢が増えるので、就職の幅は広がります。
 
-→ [障害者雇用の面接で障害をどこまで伝える？](/blog/shougaisha-koyo-mensetsu-doko-made-tsutaeru)
+→ [障害者雇用の面接で障害をどこまで伝える？](/blog/shougaisha-koyo-mensetsu-doko-made-tsutaeru/)
 
 ### 「更新が面倒」
 
 **現実：精神障害者保健福祉手帳は2年ごとの更新が必要。これは事実です。** 更新には診断書の取得（3,000〜10,000円程度）と役所への申請が必要。ただし、受けられるメリット（年間数万円の節税＋各種割引）を考えれば十分に見合います。
 
-→ [障害者手帳の更新手続きガイド](/blog/techo-koshin-guide)
+→ [障害者手帳の更新手続きガイド](/blog/techo-koshin-guide/)
 
 ### 「保険に入れなくなる」
 
